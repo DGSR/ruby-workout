@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @value.user_id %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <%= @value.image_id %>
+</p>
+
+<p>
+  <strong>Value:</strong>
+  <%= @value.value %>
+</p>
+
+<%= link_to 'Edit', edit_value_path(@value) %> |
+<%= link_to 'Back', values_path %>

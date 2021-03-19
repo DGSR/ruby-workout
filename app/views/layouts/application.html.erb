@@ -5,14 +5,16 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    <%favicon_link_tag "favicon.ico" %>
+    <%= favicon_link_tag "favicon.ico" %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-    <%= render 'shared/header'%>
-    <%= yield %>
-    <%= render 'shared/footer'%>
+  <body class="text-center">
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+      <%= render 'shared/header'%>
+      <%= yield %>
+      <%= render 'shared/footer'%>
+    </div>
   </body>
 </html>

@@ -10,13 +10,12 @@ gem 'rails', '~> 6.1.3'
 gem 'puma', '~> 5.0'
 
 gem 'sprockets-rails', :require => 'sprockets/railtie'
-
 gem 'jquery-ui-rails'
 gem 'rails-asset-jqueryui'
 gem 'bootstrap', '~> 5.0.0.beta2'
 gem 'font-awesome-sass' #, '~> 4.6.2'
 gem 'font-awesome-rails', '~> 4.6', '>= 4.6.3.1'
-gem 'jquery-rails'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '>= 6'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker

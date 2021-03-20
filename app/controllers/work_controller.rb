@@ -1,5 +1,5 @@
 class WorkController < ApplicationController
-  def index
+  def index(**)
     @images_count = Image.all.count
     # @selected_theme = "Select theme to leave your answer"
     @selected_theme = t(".def_select_theme")
@@ -9,12 +9,12 @@ class WorkController < ApplicationController
     session[:selected_theme_id] = @selected_theme # to display nothing
   end
 
-  def choose_theme
+  def choose_theme(**)
     @themes = Theme.all.pluck(:name)
     respond_to :js
   end
   # @note: first display_theme and show first image from image array
-  def display_theme
+  def display_theme(**)
     @image_data = {}
     I18n.locale = session[:current_locale]
 
@@ -24,7 +24,7 @@ class WorkController < ApplicationController
       theme_id = 1
       values_qty = Value.all.count.round
       data = { index: 0, name: 'радуга', values_qty: values_qty,
-               file: 'raduga5обрез.jpg', image_id: 4,
+               file: 'd.jpg', image_id: 4,
                current_user_id: current_user_id, user_valued: false,
                common_ave_value: 0, value: 0 }
     else

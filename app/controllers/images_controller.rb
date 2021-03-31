@@ -63,7 +63,7 @@ class ImagesController < ApplicationController
     end
 
     # Only allow a list of trusted parameters through.
-    def image_params
-      params.require(:image).permit(:name, :file, :ave_value, :theme_id)
-    end
+  def image_params
+    params.fetch(:image, {})
+  end
 end

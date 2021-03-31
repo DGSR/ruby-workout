@@ -64,6 +64,6 @@ class ValuesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def value_params
-      params.require(:value).permit(:user_id, :image_id, :value)
+      params.fetch(:value, {})
     end
 end

@@ -14,7 +14,7 @@ Image.create([
 Theme.delete_all
 Theme.reset_pk_sequence
 Theme.create([
-               {name: "-----"},      # 1 Нет темы
+               {name: "-----"},      # 1 Нет темы\
                {name: "Cupcake?"},      # 2
                {name: "Chihuahua?"},      # 3
                {name: "Bagel?"},      # 4

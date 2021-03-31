@@ -2,13 +2,11 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.7.2'
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.3'
 # Use sqlite3 as the database for Active Record
 # Use Puma as the app server
 gem 'puma', '~> 5.0'
-
 gem 'sprockets-rails', :require => 'sprockets/railtie'
 gem 'jquery-ui-rails'
 gem 'rails-asset-jqueryui'
@@ -29,15 +27,14 @@ gem 'jbuilder', '~> 2.7'
 gem 'pg', '~> 1.2.3'
 gem 'activerecord-reset-pk-sequence'
 # Use ActiveModel has_secure_password
-
 gem 'bcrypt'
 gem 'active_model_serializers'
 
-# Use Active Storage variant
-# gem 'image_processing', '~> 1.2'
-
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
+
+gem 'flash'
+gem 'kaminari'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -50,6 +47,7 @@ group :development do
   # Display performance information such as SQL time and flame graphs for each request in your browser.
   # Can be configured to work on production as well see: https://github.com/MiniProfiler/rack-mini-profiler/blob/master/README.md
   gem 'rack-mini-profiler', '~> 2.0'
+  #gem 'spring'
 end
 
 group :test do

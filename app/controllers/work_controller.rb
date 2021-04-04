@@ -1,6 +1,6 @@
 class WorkController < ApplicationController
   include WorkImage
-
+  skip_before_action :verify_authenticity_token
   def index
     @images_count = Image.all.count
     @selected_theme = "Select theme to leave your answer"
@@ -9,7 +9,6 @@ class WorkController < ApplicationController
     @values_qty = Value.all.count
     @current_locale = I18n.locale
     @themes = Theme.all.pluck(:name)
-
     session[:selected_theme_id] = @selected_theme # to display nothing
   end
 
@@ -26,7 +25,6 @@ class WorkController < ApplicationController
     @image_data = {}
     I18n.locale = session[:current_locale]
 
-    #ToDo: Remove Once Authentication done
     #current_user_id = current_user.id
     current_user_id = 1
 
@@ -44,8 +42,6 @@ class WorkController < ApplicationController
       data = show_image(theme_id, 0)
     end
     session[:selected_theme_id] = theme_id
-
     image_data(theme, data)
   end
-  skip_before_action :verify_authenticity_token
 end

@@ -15,5 +15,4 @@ module WorkHelper
     @image_data[:common_ave_value]  = data[:common_ave_value]
     @image_data
   end
-
 end

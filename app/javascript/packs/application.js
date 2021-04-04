@@ -12,3 +12,5 @@ Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
 require("jquery")
+
+global.Rails = Rails;

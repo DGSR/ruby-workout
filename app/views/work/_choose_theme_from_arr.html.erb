@@ -1,9 +1,9 @@
 <div class="form_select">
-  <%= form_tag("/display_theme",remote: true,  format: :js, authenticity_token: true) do -%>
+  <%= form_tag("/display_theme", remote: true, format:"js", authenticity_token: true) do %>
     <%= select_tag :theme,
       options_for_select(@themes, selected: @selected_theme),
       prompt: 'select_theme',
-      onchange:  "$(this).parent('form').submit();",
-      format: :js ,class:"form-select",remote:true %>
-  <% end -%>
+      onchange:  'Rails.fire(this.form, "submit")',
+      formats: [:js] ,class:"form-select"%>
+  <% end %>
 </div>

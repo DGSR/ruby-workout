@@ -1,8 +1,10 @@
 //= require_self
 //= require jquery
 //= require jquery_ui
-//= require jquery_ujs
+//= require rails-ujs
 //= require turbolinks
-//= require_tree .
 //= require bootstrap
 //= require popper
+//= require_tree .
+
+require("@rails/ujs").start();

@@ -2,9 +2,8 @@
 //= require jquery
 //= require jquery_ui
 //= require rails-ujs
-//= require turbolinks
 //= require bootstrap
-//= require popper
+//= require turbolinks
 //= require_tree .
 
 require("@rails/ujs").start();

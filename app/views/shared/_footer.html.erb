@@ -3,5 +3,12 @@
     <p>
       Website by <a href="https://github.com/DGSR/ruby-workout">Herman</a> , 2021.
     </p>
+    <p class="locale">
+      <%= link_to image_tag("Russia.jpg", alt:"", style: "width: 5%; height: 5%", title: "Русский"),locale: :ru %>
+      <%= link_to image_tag("United_Kingdom.jpg", alt:"", style: "width: 6%; height: 6%", title: "English"),locale: :en %>
+      <b>
+        <%= I18n.locale %>
+      </b>
+    </p>
   </div>
 </footer>

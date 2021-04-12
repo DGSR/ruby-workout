@@ -12,5 +12,6 @@ Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
 require("jquery")
+import "bootstrap";
 
 global.Rails = Rails;

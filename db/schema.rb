@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_06_083250) do
+ActiveRecord::Schema.define(version: 2021_04_12_072353) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -18,24 +18,27 @@ ActiveRecord::Schema.define(version: 2021_03_06_083250) do
   create_table "images", force: :cascade do |t|
     t.string "name"
     t.string "file"
-    t.float "ave_value"
     t.integer "theme_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", precision: 6, default: -> { "now()" }, null: false
+    t.datetime "updated_at", precision: 6, default: -> { "now()" }, null: false
+    t.integer "ave_value", default: 0
   end
 
   create_table "themes", force: :cascade do |t|
     t.string "name"
     t.integer "qty_items"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", precision: 6, default: -> { "now()" }, null: false
+    t.datetime "updated_at", precision: 6, default: -> { "now()" }, null: false
   end
 
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "email"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", precision: 6, default: -> { "now()" }, null: false
+    t.datetime "updated_at", precision: 6, default: -> { "now()" }, null: false
+    t.string "password_digest"
+    t.string "remember_token"
+    t.index ["remember_token"], name: "index_users_on_remember_token"
   end
 
   create_table "users_test", id: :bigint, default: -> { "nextval('users_id_seq'::regclass)" }, force: :cascade do |t|
@@ -51,8 +54,8 @@ ActiveRecord::Schema.define(version: 2021_03_06_083250) do
     t.integer "user_id"
     t.integer "image_id"
     t.integer "value"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", precision: 6, default: -> { "now()" }, null: false
+    t.datetime "updated_at", precision: 6, default: -> { "now()" }, null: false
   end
 
 end

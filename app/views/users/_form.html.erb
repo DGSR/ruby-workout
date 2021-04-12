@@ -5,23 +5,34 @@
 
       <ul>
         <% user.errors.each do |error| %>
-          <li><%= error.full_message %></li>
+          <li>
+            <%= error.full_message %>
+          </li>
         <% end %>
       </ul>
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+  <div class="form-floating">
+    <%= form.text_field :name, class:"form-control",placeholder:"login"%>
+    <%= form.label t('.name')%>
   </div>
 
-  <div class="field">
-    <%= form.label :email %>
-    <%= form.text_field :email %>
+  <div class="form-floating">
+    <%= form.text_field :email,class:"form-control",placeholder:"name@example.com" %>
+    <%= form.label "Email" %>
+  </div>
+  <div class="form-floating">
+    <%= form.password_field :password,class:"form-control",placeholder:"*****"%>
+    <%= form.label t('.password')%>
+
+  </div>
+  <div class="form-floating">
+    <%= form.password_field :password_confirmation,class:"form-control",placeholder:"*****" %>
+    <%= form.label t('.password_confirmation') %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit t(".create_account"), class:"w-100 btn btn-large btn-primary mt-3" %>
   </div>
 <% end %>

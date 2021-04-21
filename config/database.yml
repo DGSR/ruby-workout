@@ -15,7 +15,7 @@ development:
   <<: *default
   database: development
   username: developer
-  password: developer
+  password: <%= Rails.application.secrets[:database][:password] %>
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -24,10 +24,10 @@ test:
   <<: *default
   database: test
   username: tester
-  password: tester
+  password: <%= Rails.application.secrets[:database][:password] %>
 
 production:
   <<: *default
   database: production
   username: prod
-  password: prod
+  password: <%= ENV["PRODUCTION_DATABASE_PASSWORD"] %>

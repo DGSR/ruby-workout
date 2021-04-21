@@ -6,15 +6,16 @@
 #
 default: &default
   adapter: postgresql
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  encoding: unicode
-  timeout: 5000
+  encoding: UTF8
   reaping_frequency: 30
+  username: nsf_admin
+  pool: 5
+  timeout: 5000
+
 
 development:
   <<: *default
   database: development
-  username: developer
   password: <%= Rails.application.secrets[:database][:password] %>
 
 # Warning: The database defined as "test" will be erased and
@@ -23,11 +24,9 @@ development:
 test:
   <<: *default
   database: test
-  username: tester
   password: <%= Rails.application.secrets[:database_password] %>
 
 production:
   <<: *default
   database: production
-  username: prod
   password: <%= ENV["PRODUCTION_DATABASE_PASSWORD"] %>

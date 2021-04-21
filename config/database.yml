@@ -24,7 +24,7 @@ test:
   <<: *default
   database: test
   username: tester
-  password: <%= Rails.application.secrets[:database][:password] %>
+  password: <%= Rails.application.secrets[:database_password] %>
 
 production:
   <<: *default

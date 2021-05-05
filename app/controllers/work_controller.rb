@@ -1,6 +1,8 @@
 class WorkController < ApplicationController
   include WorkImage
+  include WorkHelper
   skip_before_action :verify_authenticity_token
+
   def index
     @images_count = Image.all.count
     @selected_theme = "Select theme to leave your answer"
@@ -25,8 +27,8 @@ class WorkController < ApplicationController
     @image_data = {}
     I18n.locale = session[:current_locale]
 
-    #current_user_id = current_user.id
-    current_user_id = 1
+    current_user_id = current_user.id
+
 
     if params[:theme] == "-----" #.blank?
       theme = "Select theme to leave your answer"
@@ -43,5 +45,13 @@ class WorkController < ApplicationController
     end
     session[:selected_theme_id] = theme_id
     image_data(theme, data)
+  end
+
+  def results_list
+    @selected_theme_id = session[:selected_theme_id]
+    res_composite_diag = Image.where(theme_id: @selected_theme_id).order("ave_value DESC")
+    composite_results_size = res_composite_diag.size
+    @composite_results = res_composite_diag.take(composite_results_size)
+    @composite_results_paged = pages_of(@composite_results, 6)
   end
 end

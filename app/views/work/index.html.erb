@@ -9,6 +9,21 @@
           <div class="select_theme">
             <%= render 'work/button_theme_select', locale: @current_locale %>
           </div>
+          <div class="modal_list_results">
+            <%= render 'work/button_list_results' %>
+            <br/>
+          </div>
+          <!--
+          <span class="common_value">
+            <%= t('.common_value') %>
+            <h2 class="common" title="Common value"></h2>
+          </span>-->
+          <span class="total_values">
+            <%= t('.total_values') %>
+            <h2 class="total" title="Total values">
+              <%= @values_qty.round %>
+            </h2>
+          </span>
         </div>
         <br/>
       </div>
@@ -16,13 +31,13 @@
         <div class="image_display">
           <div class="row image">
             <div class="col-md-12">
-              <h2 class="up-theme" title="theme_name">
-                <% @selected_theme%>
+              <h2 class="up-theme" title="<%=t('.theme_name')%>">
+                <%= @selected_theme%>
               </h2>
             </div>
             <div class="col-md-12">
-              <h2 class="up" title="Image file name">
-                <% @selected_image_name%>
+              <h2 class="up" title="<%=t('.image_name')%>">
+                <%= @selected_image_name%>
               </h2>
             </div>
             <div class="col-md-1">
@@ -43,6 +58,24 @@
                 <h3 title="list to next image">
                   <i class="fa fa-chevron-circle-right"></i>
                 </h3>
+              </div>
+            </div>
+          </div>
+          <div class="row diag">
+            <div class="col-md-12">
+              <div class="image_diag">
+                <div id="chosen_value">50</div>
+                <h2 class="down" title="Value scale">
+                  <%= t(".make_decision") %>
+                </h2>
+                <button class="button__results save" title="Save image diag results">
+                  <%link_to t(".save_decision"),"#",{"data-remote"=>true,:format=>"js",:title => "Save image diag results"} %>
+                </button>
+                <div class="row">
+                  <div class="col-md-1">5%</div>
+                  <div class="col-md-10 slider"><input id="slide" max="100" min="5" onchange="updateSlider(this.value)" step="5" type="range" value="50"/></div>
+                  <div class="col-md-1">100%</div>
+                </div>
               </div>
             </div>
           </div>

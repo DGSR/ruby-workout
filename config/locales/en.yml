@@ -78,6 +78,15 @@ en:
 
     index:
       def_select_theme: "Select theme to leave your answer"
+      theme_name: "Theme name"
+      image_name: "Image file name"
+      common_value: "common value"
+      total_values: "total values"
+
+      make_decision: "Make your decision"
+      save_decision: "save"
+
+      share_opinion: "Share your opinion"
 
 
     button_theme_select:
@@ -93,17 +102,11 @@ en:
       select_theme: "select theme ch"
 
     images:
-      common_value: "common value"
-      total_values: "total values"
 
-      make_decision: "Make your decision"
-      save_decision: "save"
-
-      share_opinion: "Share your opinion"
 
 
       # titles
-      theme_name: "Theme name"
+
 
     display_theme:
       select_theme: "Select theme"

@@ -47,6 +47,17 @@ ru:
 
     index:
       def_select_theme: "Выберите тему для оценки"
+      # titles
+      theme_name: "Тема"
+      image_name: "Название файла изображения"
+      common_value: "средняя оценка"
+      total_values: "всего оценок"
+
+      make_decision: "Выберите свою оценку"
+      save_decision: "сохранить"
+
+      share_opinion: "Поделись своим мнением"
+
 
     button_theme_select:
       select_theme_bt: "выбрать тему"
@@ -57,19 +68,6 @@ ru:
 
     choose_theme_from_arr:
       select_theme: "выберите тему"
-
-    images:
-      common_value: "средняя оценка"
-      total_values: "всего оценок"
-
-      make_decision: "Выберите свою оценку"
-      save_decision: "сохранить"
-
-      share_opinion: "Поделись своим мнением"
-
-
-      # titles
-      theme_name: "Тема"
 
     display_theme:
       select_theme: "Выберите тему для оценки"

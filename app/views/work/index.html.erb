@@ -69,11 +69,11 @@
                   <%= t(".make_decision") %>
                 </h2>
                 <button class="button__results save" title="Save image diag results">
-                  <%link_to t(".save_decision"),"#",{"data-remote"=>true,:format=>"js",:title => "Save image diag results"} %>
+                  <%link_to t(".save_decision"),{"data-remote"=>true,:format=>"js",:title => "Save image diag results"} %>
                 </button>
                 <div class="row">
                   <div class="col-md-1">5%</div>
-                  <div class="col-md-10 slider"><input id="slide" max="100" min="5" onchange="updateSlider(this.value)" step="5" type="range" value="50"/></div>
+                  <div class="col-md-10 slider"><input id="slide" max="100" min="5" step="5" type="range" value="50"/></div>
                   <div class="col-md-1">100%</div>
                 </div>
               </div>

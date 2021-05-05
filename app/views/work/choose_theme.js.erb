@@ -15,4 +15,21 @@ $(document).click(function(e){
         $('.select_theme').empty().html("<%= j render 'work/button_theme_select' %>");
     }
 });
+
+$("#slide").change(function (){
+    //get the element
+    var slideAmount=this.value;
+    var displayValue = document.getElementById("chosen_value");
+    //show the amount
+    console.log("IN updateSlider:  - slideAmount = " + slideAmount );
+    displayValue.innerHTML = slideAmount;
+
+    //get the element
+    var pic = document.getElementById("pic");
+    //set the dimensions
+    //   pic.style.width = slideAmount + "%";
+    //   pic.style.height = slideAmount + "%";
+    // return slideAmount;
+});
+
 $('.select_theme').empty().html("<%= j render 'choose_theme_from_arr' %>");

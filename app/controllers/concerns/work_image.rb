@@ -23,7 +23,6 @@ module WorkImage
     if user_valued == 1
 
       common_ave_value = Image.find_image(image_id).ave_value
-      #common_ave_value = Image.find(image_id).ave_value
       logger.info "In 1show_image: common_ave_value = #{common_ave_value.inspect} "
       if common_ave_value.blank?
         common_ave_value = 0

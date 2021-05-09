@@ -1,11 +1,9 @@
-<h1 class="cover-heading">Work#index.</h1>
-<p class="lead">Find me in app/views/work/index.html.erb</p>
 <main role="main" class="inner cover">
 
   <div class="image">
     <div class="row">
       <div class="col-md-3">
-        <div class="left-controls">
+        <div class="left_controls">
           <div class="select_theme">
             <%= render 'work/button_theme_select', locale: @current_locale %>
           </div>
@@ -13,11 +11,10 @@
             <%= render 'work/button_list_results' %>
             <br/>
           </div>
-          <!--
           <span class="common_value">
             <%= t('.common_value') %>
             <h2 class="common" title="Common value"></h2>
-          </span>-->
+          </span>
           <span class="total_values">
             <%= t('.total_values') %>
             <h2 class="total" title="Total values">
@@ -68,9 +65,12 @@
                 <h2 class="down" title="Value scale">
                   <%= t(".make_decision") %>
                 </h2>
-                <button class="button__results save" title="Save image diag results">
-                  <%link_to t(".save_decision"),{"data-remote"=>true,:format=>"js",:title => "Save image diag results"} %>
-                </button>
+                <p class="button__results save lead" title="Save image diag results">
+                  <%= link_to t(".save_decision"),"#",
+                              {"data-remote"=>true,:format=>"js",
+                               :title => "Save image diag results",
+                               class: "btn btn-secondary btn-sm button__left theme"} %>
+                </p>
                 <div class="row">
                   <div class="col-md-1">5%</div>
                   <div class="col-md-10 slider"><input id="slide" max="100" min="5" step="5" type="range" value="50"/></div>

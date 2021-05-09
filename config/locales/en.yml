@@ -1,34 +1,3 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
-# true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
-# en:
-#   'true': 'foo'
-#
-# To learn more, please read the Rails Internationalization guide
-# available at https://guides.rubyonrails.org/i18n.html.
-
 en:
   hello: "Hello world"
   shared:
@@ -45,7 +14,6 @@ en:
       contact: "Contacts"
 
     footer:
-
       dev_msg: "App is in Development"
 
   sessions:
@@ -62,16 +30,14 @@ en:
       email: "E-mail"
       password: "Password"
       password_confirmation: "Password confirmation"
-      #      confirmation: "Подтверждение"
       create_account: "Create my account"
 
     new:
       new_user_sign_up: "New user sign up"
       back: "Back"
 
-
     show:
-      work: "Proceed to work"
+      work: "Evaluate images"
       email: "Email"
 
   work:
@@ -80,45 +46,47 @@ en:
       def_select_theme: "Select theme to leave your answer"
       theme_name: "Theme name"
       image_name: "Image file name"
-      common_value: "common value"
-      total_values: "total values"
+      common_value: "Common value"
+      total_values: "Total values"
 
       make_decision: "Make your decision"
-      save_decision: "save"
+      save_decision: "Save"
 
       share_opinion: "Share your opinion"
 
+      no_idea: "No idea"
+
 
     button_theme_select:
-      select_theme_bt: "select theme"
+      select_theme_bt: "Select theme"
 
     button_list_results:
-      results_list: "list results"
+      results_list: "Results"
 
     choose_theme_from_arr:
-      select_theme: "select theme ar"
-
-    choose_theme:
-      select_theme: "select theme ch"
-
-    images:
-
-
-
-      # titles
-
+      select_theme: "Select theme from list"
 
     display_theme:
-      select_theme: "Select theme"
+      select_theme: "Select theme to evaluate"
+      bagel: "Bagel"
+      dog: "Dog"
+      muffin: "Muffin"
+      chihuahua: "Chihuahua"
 
 
     results_list:
-      no_values: "No Values results for selected theme..."
+      no_values: "No evaluations for selected theme..."
       select_theme: "Select other theme"
       return_to_main: "Return to main"
 
       # titles
       page_title: "Go to work area"
+    choose_theme:
+      no_idea: "No idea"
+      bagel: "Bagel"
+      dog: "Dog"
+      muffin: "Muffin"
+      chihuahua: "Chihuahua"
 
 
   main:

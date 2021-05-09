@@ -18,18 +18,27 @@ $(document).click(function(e){
 
 $("#slide").change(function (){
     //get the element
-    var slideAmount=this.value;
-    var displayValue = document.getElementById("chosen_value");
+    let displayValue = document.getElementById("chosen_value");
     //show the amount
-    console.log("IN updateSlider:  - slideAmount = " + slideAmount );
-    displayValue.innerHTML = slideAmount;
-
-    //get the element
-    var pic = document.getElementById("pic");
-    //set the dimensions
-    //   pic.style.width = slideAmount + "%";
-    //   pic.style.height = slideAmount + "%";
-    // return slideAmount;
+    console.log("IN updateSlider:  - slideAmount = " + this.value);
+    let val=parseInt(this.value)
+    if(val===50){
+        displayValue.innerHTML="<%= t(".no_idea") %>"
+    }
+    else if(this.value>50){
+        if($(".up-theme")[0].innerText==="Bagel or Dog?"){
+            displayValue.innerHTML="<%= t(".dog") %> "+((val-50)*2).toString()+"%";
+        }else{
+            displayValue.innerHTML="<%= t(".chihuahua") %> "+((val-50)*2).toString()+"%";
+        }
+    }
+    else if(this.value<50){
+        if($(".up-theme")[0].innerText==="Bagel or Dog?"){
+            displayValue.innerHTML="<%= t(".bagel") %> "+((-val+50)*2).toString()+"%";
+        }else{
+            displayValue.innerHTML="<%= t(".muffin") %> "+((-val+50)*2).toString()+"%";
+        }
+    }
 });
 
 $('.select_theme').empty().html("<%= j render 'choose_theme_from_arr' %>");

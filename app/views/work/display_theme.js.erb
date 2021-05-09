@@ -20,6 +20,17 @@ if (selectedTheme === "Выберите тему для оценки" ||
     $('.image .image_display .image_diag').css({"display": "block"});
 }
 
+console.log(selectedTheme,selectedTheme === "Bagel or Dog?")
+if (selectedTheme === "Bagel or Dog?"){
+
+    $('#slider-left').empty().append("<%= t(".bagel") %> "+"100%");
+    $('#slider-right').empty().append("<%= t(".dog") %> "+"100%");
+}
+else{
+    $('#slider-left').empty().append("<%= t(".muffin") %> "+"100%");
+    $('#slider-right').empty().append("<%= t(".chihuahua") %> "+"100%");
+}
+
 var userValuedImage = '<%= @image_data[:user_valued] %>';
 
 if(userValuedImage === 1){

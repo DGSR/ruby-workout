@@ -1,5 +1,6 @@
 <div class="form_select">
   <%= form_tag("/display_theme", remote: true, format:"js", authenticity_token: true) do %>
+    <%= hidden_field_tag :foo, params[:locale]%>
     <%= select_tag :theme,
       options_for_select(@themes, selected: @selected_theme),
       prompt: t('.select_theme'),

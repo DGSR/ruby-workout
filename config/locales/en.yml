@@ -41,6 +41,8 @@ en:
       email: "Email"
 
   work:
+    Bagel or Dog?: "Bagel or Dog?"
+    Cupcake or Chihuahua?: "Cupcake or Chihuahua?"
 
     index:
       def_select_theme: "Select theme to leave your answer"

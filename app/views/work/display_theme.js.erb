@@ -1,3 +1,5 @@
+document.getElementById("slide").value=50;
+$("#slide").trigger("change");
 // get data from controller		контроль в консоли
 var imageData = '<%= raw @image_data %>';
 console.log("IN display_theme: @image_data = " + imageData);
@@ -20,16 +22,12 @@ if (selectedTheme === "Выберите тему для оценки" ||
     $('.image .image_display .image_diag').css({"display": "block"});
 }
 
-console.log(selectedTheme,selectedTheme === "Bagel or Dog?")
-if (selectedTheme === "Bagel or Dog?"){
+console.log($(".up-theme")[0].innerText)
+$(document).ready(function (){
+    $('#slider-left').empty().append($(".up-theme")[0].innerText.split(" ")[0]+" 100%");
+    $('#slider-right').empty().append($(".up-theme")[0].innerText.split(" ")[2].slice(0,-1)+" 100%");
+})
 
-    $('#slider-left').empty().append("<%= t(".bagel") %> "+"100%");
-    $('#slider-right').empty().append("<%= t(".dog") %> "+"100%");
-}
-else{
-    $('#slider-left').empty().append("<%= t(".muffin") %> "+"100%");
-    $('#slider-right').empty().append("<%= t(".chihuahua") %> "+"100%");
-}
 
 var userValuedImage = '<%= @image_data[:user_valued] %>';
 
@@ -54,7 +52,7 @@ console.log("3d IN display_theme: currentUserId = " + currentUserId);
 $('.image_display h2.up-theme').append().html(selectedTheme);
 
 //restore button
-$('.select_theme').empty().html("<%= j render 'work/button_theme_select' -%>");
+$(document).click()
 
 // get data from controller
 var imageCurrentIndex = '<%= @image_data[:index] %>';
@@ -90,6 +88,8 @@ $('.img-right-side').click(function(event) {
         },
         dataType: 'json'
     }).done(function (data_return) {
+        document.getElementById("slide").value=50;
+        $("#slide").trigger("change");
         console.log("success:  " + data_return.notice);
         imageCurrentIndex = data_return.new_image_index;
         oneImageName = data_return.name;
@@ -133,6 +133,8 @@ $('.img-left-side').click(function(event) {
         },
         dataType: 'json'
     }).done(function (data_return) {
+        document.getElementById("slide").value=50;
+        $("#slide").trigger("change");
         console.log("success:  " + data_return.notice);
         imageCurrentIndex = data_return.new_image_index;
         oneImageName = data_return.name;
@@ -170,7 +172,6 @@ $('.img-left-side').click(function(event) {
 $('.button__results.save').unbind( "click" ).click(function(event) {
     console.log("clicked: button__results.save: ");
     event.stopImmediatePropagation(); // would stop the event from bubbling to parent elements,
-    // var displayValue = $('#chosen_value')[0].innerHTML;
     var displayValue = document.getElementById('chosen_value').innerHTML;
     console.log("displayValue = " + displayValue );
 

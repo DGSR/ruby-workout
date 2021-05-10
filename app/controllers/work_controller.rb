@@ -5,8 +5,7 @@ class WorkController < ApplicationController
 
   def index
     @images_count = Image.all.count
-    @selected_theme = "Select theme to leave your answer"
-    #@selected_theme = t('.def_select_theme')
+    @selected_theme = t('.def_select_theme')
     @selected_image_name = 'dog-1'
     @values_qty = Value.all.count
     @current_locale = I18n.locale
@@ -15,7 +14,11 @@ class WorkController < ApplicationController
   end
 
   def choose_theme
-    @themes = Theme.all.pluck(:name)
+    if locale.to_s=="ru"
+      @themes={"-----"=>"-----", t(".Bagel or Dog?")=>"Bagel or Dog?", t(".Cupcake or Chihuahua?")=>"Cupcake or Chihuahua?"}
+    else
+      @themes = Theme.all.pluck(:name)
+    end
     logger.info "In WorkController#choose_theme @themes = #{@themes}"
     respond_to :js
   end
@@ -44,6 +47,13 @@ class WorkController < ApplicationController
       data = show_image(theme_id, 0)
     end
     session[:selected_theme_id] = theme_id
+    if params[:foo]== "ru"
+      if theme=="Cupcake or Chihuahua?"
+        theme="Кекс или Чихуахуа?"
+      else
+        theme="Бублик или Собака?"
+      end
+    end
     image_data(theme, data)
   end
 

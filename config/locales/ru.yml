@@ -41,6 +41,8 @@ ru:
       email: "Email"
 
   work:
+    Bagel or Dog?: "Бублик или Собака?"
+    Cupcake or Chihuahua?: "Кекс или Чихуахуа?"
 
     index:
       def_select_theme: "Выберите тему для оценки"

@@ -43,8 +43,17 @@ ru:
       back: "Назад"
 
     show:
-      work: "Оценить картинки"
+      work: "Оценить изображения"
       email: "Email"
+      show: "Показать"
+      edit: "Редактировать"
+      destroy: "Удалить"
+    index:
+      users: "Пользователи"
+      confirm: "Вы уверены?"
+      new_user: "Новый пользователь"
+    edit:
+      edit_user: "Редактирование пользователя"
 
   work:
     Bagel or Dog?: "Бублик или Собака?"
@@ -80,6 +89,7 @@ ru:
       dog: "Собака"
       muffin: "Кекс"
       chihuahua: "Чихухуа"
+      no_idea: "Без понятия"
 
 
     results_list:
@@ -99,6 +109,10 @@ ru:
 
 
   main:
+    index:
+      welcome: "Добро пожаловать в Resemblence"
+      work: "Приступить к оценке"
+      sign_up: "Зарегистироваться"
     about:
       about_title: "О сайте"
       about_html: "Приложение Resemblence предназначено для сбора оценок идентификаций объектов пользователями.<br>

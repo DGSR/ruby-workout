@@ -45,6 +45,15 @@ en:
     show:
       work: "Evaluate images"
       email: "Email"
+      show: "Show"
+      edit: "Edit"
+      destroy: "Destroy"
+    index:
+      users: "Users"
+      confirm: "Are you sure?"
+      new_user: "New user"
+    edit:
+      edit_user: "Edit user"
 
   work:
     Bagel or Dog?: "Bagel or Dog?"
@@ -80,6 +89,7 @@ en:
       dog: "Dog"
       muffin: "Muffin"
       chihuahua: "Chihuahua"
+      no_idea: "No idea"
 
 
     results_list:
@@ -99,6 +109,10 @@ en:
 
 
   main:
+    index:
+      welcome: "Welcome to the Resemblence"
+      work: "Proceed to evaluation"
+      sign_up: "Sign up now"
     about:
       about_title: "About"
       about_html: "The application Resemblence is designed to collect estimates of object identifications by users.<br>

@@ -25,10 +25,10 @@ $("#slide").change(function (){
     if(val===50){
         displayValue.innerHTML="<%= t(".no_idea") %>"
     }
-    else if(this.value<50){
+    else if(val<50){
         displayValue.innerHTML=theme.innerText.split(" ")[0]+" "+((-val+50)*2).toString()+"%";
     }
-    else if(this.value>50){
+    else if(val>50){
         displayValue.innerHTML=theme.innerText.split(" ")[2].slice(0,-1)+" "+((val-50)*2).toString()+"%";
     }
 });

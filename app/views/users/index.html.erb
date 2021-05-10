@@ -1,24 +1,22 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Users</h1>
-
+<h1><%=t(".users") %></h1>
 <table>
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Email</th>
+      <th><%= t("users.form.name") %></th>
+      <th><%= t("users.show.email") %></th>
       <th colspan="3"></th>
     </tr>
   </thead>
-
   <tbody>
     <% @users.each do |user| %>
       <tr>
         <td><%= user.name %></td>
         <td><%= user.email %></td>
-        <td><%= link_to 'Show', user %></td>
-        <td><%= link_to 'Edit', edit_user_path(user) %></td>
-        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to t("users.show.show"), user %></td>
+        <td><%= link_to t("users.show.edit"), edit_user_path(user) %></td>
+        <td><%= link_to t("users.show.destroy"), user, method: :delete, data: { confirm: t(".confirm") } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -26,4 +24,4 @@
 
 <br>
 
-<%= link_to 'New User', new_user_path %>
+<%= link_to t(".new_user"), new_user_path %>

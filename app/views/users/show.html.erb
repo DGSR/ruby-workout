@@ -17,5 +17,5 @@
   <%= link_to t(".work"), work_path, class: "w-100 mt-3 btn btn-primary" %>
 </div>
 
-<%= link_to 'Edit', edit_user_path(@user), class:"w-100 mt-3 btn btn-warning" %>
+<%= link_to t("users.show.edit"), edit_user_path(@user), class:"w-100 mt-3 btn btn-warning" %>
 <%= link_to t("users.new.back"), users_path, class:"w-100 mt-3 btn btn-secondary" %>

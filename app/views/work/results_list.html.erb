@@ -13,27 +13,25 @@
   </table>
   <br/>
   <% else %>
-    <table style="table-layout: auto" title="All images expert values">
+    <table style="table-layout: auto;width: 100%" title="All images expert values">
       <div class="results">
-        <h2>All images expert values</h2>
+        <h2><%= t(".title") %></h2>
       </div>
       <tr style="font-family: Helvetica,serif; font-size: 2em; margin-bottom: .5em">
-        <th class="name">
-          Image name
-        </th>
-        <th>Image</th>
-        <th>Value</th>
-        <th>date</th>
+        <th class="name"><%= t("image_name") %></th>
+        <th><%= t("image") %></th>
+        <th><%= t("value") %></th>
+        <th><%= t("date") %></th>
       </tr>
       <% @composite_results_paged.each do |composite_diag| %>
         <tr class="one_row">
-          <td style="text-align: left; width: 25em">
+          <td>
             <%= composite_diag.name %>
           </td>
           <td>
             <%= image_tag('/assets/pictures/' + composite_diag.file, {:width => "53", :height =>"47", title: "Tested image"} ) %>
           </td>
-          <td style="color: rgba(122, 13, 75, 1);">
+          <td>
             <%= composite_diag.ave_value %>
           </td>
           <td>

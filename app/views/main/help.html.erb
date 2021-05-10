@@ -1,2 +1,23 @@
-<h1>Main#help</h1>
-<p>Find me in app/views/main/help.html.erb</p>
+<main role="main" class="inner cover">
+  <div>
+  <% if signed_in? %>
+    <h1><%= t("welcome") %>, <%=@current_user.name%>!</h1>
+    <%else %>
+    <h1><%= t("welcome") %>, <%= t(".user") %>!</h1>
+  <% end %>
+  </div>
+  <h2 class="pb-3 pt-1"><%= t(".how_title") %></h2>
+  <ul class="helpList h5">
+    <li><%= t(".step_1") %></li>
+    <li><%= t(".step_2") %></li>
+    <li><%= t(".step_3") %></li>
+    <li><%= t(".step_4") %></li>
+    <li><%= t(".step_5") %></li>
+    <li><%= t(".step_6") %></li>
+    <li><%= t(".step_7") %></li>
+  </ul>
+  <script>
+      document.getElementsByClassName("nav-link")[0].classList.remove("active");
+      document.getElementsByClassName("nav-link")[1].classList.add("active");
+  </script>
+</main>

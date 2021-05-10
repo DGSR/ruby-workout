@@ -1,4 +1,9 @@
 en:
+  image_name: "Image name"
+  image: "Image"
+  value: "value"
+  date: "Date"
+  welcome: "Welcome"
   hello: "Hello world"
   shared:
     header:
@@ -14,7 +19,8 @@ en:
       contact: "Contacts"
 
     footer:
-      dev_msg: "App is in Development"
+      website_by: "Website by"
+      author: "Herman"
 
   sessions:
     new:
@@ -83,6 +89,7 @@ en:
 
       # titles
       page_title: "Go to work area"
+      title: "All expert values"
     choose_theme:
       no_idea: "No idea"
       bagel: "Bagel"
@@ -94,6 +101,19 @@ en:
   main:
     about:
       about_title: "About"
-
+      about_html: "The application Resemblence is designed to collect estimates of object identifications by users.<br>
+       The objects of evaluation are pictures, which will later be used as datasets for machine learning.<br>
+        By evaluating the proposed pictures, you are advancing research in machine learning and making machines one step closer to completing daily routine human tasks =) "
     contacts:
       contacts_title: "Contacts"
+      contacts_html: "If you have any questions or suggestions, feel free to contact by email: "
+    help:
+      user: "user"
+      how_title: "How to get started"
+      step_1: "Register Now. It is required in order to gain access to our service."
+      step_2: "If you are registered, you need to sign in in account."
+      step_3: "In order to start evaluating, you first need to choose a topic."
+      step_4: "Once the topic is selected, one of the pictures will be displayed for evaluation."
+      step_5: "Choose the most suitable theme for the picture and stretch the slider to it, indicating the percentage of confidence."
+      step_6: "The screen displays the average score of all experts who participated in the survey for this image on the selected topic. As well as the total number of all ratings on the site. "
+      step_7: "You can also see the final grades on the selected topic."

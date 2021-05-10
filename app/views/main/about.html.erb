@@ -1,2 +1,6 @@
-<h1>Main#about</h1>
-<p>Find me in app/views/main/about.html.erb</p>
+<h1><%= t(".about_title") %></h1>
+<p class="h5"><%= t(".about_html") %></p>
+<script>
+    document.getElementsByClassName("nav-link")[0].classList.remove("active");
+    document.getElementsByClassName("nav-link")[3].classList.add("active");
+</script>

@@ -18,10 +18,10 @@ $(document).click(function(e){
 
 $("#slide").change(function (){
     //get the element
-    let displayValue = document.getElementById("chosen_value");
+    var displayValue = document.getElementById("chosen_value");
     //show the amount
-    let val=parseInt(this.value)
-    let theme=$(".up-theme")[0];
+    var val=parseInt(this.value)
+    var theme=$(".up-theme")[0];
     if(val===50){
         displayValue.innerHTML="<%= t(".no_idea") %>"
     }

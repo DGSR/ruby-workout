@@ -1,6 +1,6 @@
 function evaluation(value){
-    let val=parseInt(value);
-    let theme=$(".up-theme")[0];
+    var val=parseInt(value);
+    var theme=$(".up-theme")[0];
     if(val===50){
         if(theme.innerText.charCodeAt(0)<255) {
             return "<%= t(".no_idea",:locale=>:en) %>"

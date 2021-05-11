@@ -53,7 +53,7 @@ end
 group :production do
   # For Heroku deployment
   gem 'rails_12factor'
-  gem 'uglifier', '~> 2.7'
+  gem 'uglifier', '~> 4.2'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

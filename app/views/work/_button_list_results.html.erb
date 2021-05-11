@@ -1,6 +1,7 @@
 <p class="lead ">
-  <a href="results_list" title="List all your results"
-     class="btn btn-secondary btn-sm button__left theme">
-    <%= t('.results_list') %>
-  </a>
+  <%= link_to t('.results_list'),
+              results_list_path,
+              :title=>"List all your results",
+              locale: @current_locale,
+              class: "btn btn-secondary btn-sm button__left theme" %>
 </p>

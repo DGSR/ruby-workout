@@ -1,4 +1,4 @@
-<div title="<%= t(".page_title") %>">
+<div class="pb-2" title="<%= t(".page_title") %>">
   <% if @composite_results.blank? %>
     <table style="table-layout: auto" title="No Values results...">
       <div class="results">
@@ -8,12 +8,10 @@
         <h2>
           <%= t(".select_theme") %>
         </h2>
-
   </div>
   </table>
-  <br/>
   <% else %>
-    <table style="table-layout: auto;width: 100%" title="All images expert values">
+    <table style="table-layout: auto;width: 100%">
       <div class="results">
         <h2><%= t(".title") %></h2>
       </div>
@@ -41,9 +39,6 @@
       <% end %>
       <%= paginate @composite_results_paged, class: "pt-3 pb-3"%>
     </table>
-    <br/>
   <% end %>
 </div>
 <%= link_to t(".return_to_main"), work_path,  class: "btn btn-lg btn-primary", title: "Go to main page" %>
-<br/>
-<br/>

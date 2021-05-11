@@ -40,11 +40,10 @@ if (selectedTheme === "Выберите тему для оценки" ||
     $('.img-right-side').css({"display": "block"});
     $('.image .image_display .image_diag').css({"display": "block"});
 }
-
-console.log($(".up-theme")[0].innerText)
+var upTheme=$(".up-theme")[0].innerText
 $(document).ready(function (){
-    $('#slider-left').empty().append($(".up-theme")[0].innerText.split(" ")[0]+" 100%");
-    $('#slider-right').empty().append($(".up-theme")[0].innerText.split(" ")[2].slice(0,-1)+" 100%");
+    $('#slider-left').empty().append(upTheme.split(" ")[0]+" 100%");
+    $('#slider-right').empty().append(upTheme.split(" ")[2].slice(0,-1)+" 100%");
 })
 
 
@@ -128,7 +127,7 @@ $('.img-right-side').click(function(event) {
             $('.image .image_display .image_diag').css({"display": "none"});
 
             var imageCommonValue = data_return.common_ave_value;
-            var evaluated = evaluation(imageCommonValue);
+            evaluated = evaluation(imageCommonValue);
             $('.left_controls span.common_value h2.common').append().html(evaluated);
         }else{
             $('.left_controls span.common_value').css({"display": "none"});
@@ -174,7 +173,7 @@ $('.img-left-side').click(function(event) {
             $('.image .image_display .image_user_value').append().html(evaluated);
             $('.image .image_display .image_diag').css({"display": "none"});
             var imageCommonValue = data_return.common_ave_value;
-            var evaluated = evaluation(imageCommonValue);
+            evaluated = evaluation(imageCommonValue);
             $('.left_controls span.common_value h2.common').append().html(evaluated);
             $('.image .image_display .image_user_value').css({"display": "block"});
         }else{

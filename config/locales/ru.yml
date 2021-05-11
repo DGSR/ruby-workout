@@ -107,6 +107,12 @@ ru:
       dog: "Собака"
       muffin: "Кекс"
       chihuahua: "Чихухуа"
+  views:
+    pagination:
+      first: "« Первая"
+      previous: "‹ Предыдущая"
+      next: "Следующая ›"
+      last: "Последняя »"
 
 
   main:

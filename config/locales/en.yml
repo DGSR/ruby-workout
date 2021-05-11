@@ -107,6 +107,12 @@ en:
       dog: "Dog"
       muffin: "Muffin"
       chihuahua: "Chihuahua"
+    views:
+      pagination:
+        first: "First"
+        previous: "Previous"
+        next: "Next"
+        last: "Last"
 
 
   main:

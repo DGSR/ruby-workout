@@ -12,7 +12,7 @@ function overlay() {
             var overlayId = document.getElementById("overlay_m");
             console.log( overlayId );
             console.log("IN results_list: function overlay() = " + overlayId );
-            overlayId.style.visibility = (overlayId.style.visibility == "visible") ? "hidden" : "visible";
+            overlayId.style.visibility = (overlayId.style.visibility === "visible") ? "hidden" : "visible";
         }
     )(jQuery);
 
@@ -39,7 +39,20 @@ span.onclick = function() {
     console.log("ON: span.onclick: overlayId.style.visibility = " + overlayId.style.visibility );
 };
 
+$(document).ready(function (){
+    var currentPage=$('.pagination .current')[0];
+    console.log(currentPage.classList)
+    currentPage.classlist.add("disabled");
+    currentPage.innerHTML="<a href='#' tabindex='-1'>"+currentPage.innerText+"</a>";
+    $('.pagination').forEach(el=> {
+        el.classlist.add("page-item");
+        el.child.classlist.add("page-link");
+    });
+})
+
 $('.results_list').empty().html("<%= j render 'results_list' -%>");
+
+
 
 
 // pagination listing

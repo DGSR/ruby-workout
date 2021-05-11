@@ -17,8 +17,6 @@ function evaluation(value){
     return 0
 }
 
-document.getElementById("slide").value=50;
-$("#slide").trigger("change");
 // get data from controller		контроль в консоли
 var imageData = '<%= raw @image_data %>';
 console.log("IN display_theme: @image_data = " + imageData);
@@ -40,11 +38,11 @@ if (selectedTheme === "Выберите тему для оценки" ||
     $('.img-right-side').css({"display": "block"});
     $('.image .image_display .image_diag').css({"display": "block"});
 }
-var upTheme=$(".up-theme")[0].innerText
-$(document).ready(function (){
-    $('#slider-left').empty().append(upTheme.split(" ")[0]+" 100%");
-    $('#slider-right').empty().append(upTheme.split(" ")[2].slice(0,-1)+" 100%");
-})
+//var upTheme=$(".up-theme")[0].innerText
+//$(document).ready(function (){
+//    $('#slider-left').empty().append(upTheme.split(" ")[0]+" 100%");
+//    $('#slider-right').empty().append(upTheme.split(" ")[2].slice(0,-1)+" 100%");
+//})
 
 
 var userValuedImage = '<%= @image_data[:user_valued] %>';
@@ -59,7 +57,7 @@ if(userValuedImage === 1){
     $('.left_controls span.common_value h2.common').append().html(evaluated);
 
     var imageValue = '<%= @image_data[:value] %>';
-    var evaluated = evaluation(imageValue);
+    evaluated = evaluation(imageValue);
     $('.image .image_display .image_user_value').append().html(evaluated).css({"display": "block"});
 }else{
     $('.left_controls span.common_value').css({"display": "none"});
@@ -93,6 +91,8 @@ var pathImage = "assets/pictures/" + oneImageFile;
 
 $(".img-center").attr({title: "Selected image"});
 $(".img-center img").attr({alt: "Selected Image", src: pathImage, title: "Selected image"});
+document.getElementById("slide").value=50;
+$("#slide").trigger("change");
 
 $('.img-right-side').click(function(event) {
     event.stopImmediatePropagation(); // would stop the event from bubbling to parent elements,
@@ -218,7 +218,7 @@ $('.button__results.save').unbind( "click" ).click(function(event) {
             $('.left_controls span.total_values h2.total').append().html(valuesQty);
 
             var imageCommonValue = data_return.common_ave_value;
-            var evaluated = evaluation(imageCommonValue);
+            evaluated = evaluation(imageCommonValue);
             console.log("6 IN save_value: imageCommonValue = " + evaluated);
             $('.left_controls span.common_value h2.common').append().html(evaluated);
 

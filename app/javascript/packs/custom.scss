@@ -31,3 +31,36 @@
 .helpList li{
    margin-bottom: 10px;
 }
+
+.pagination {
+  position: relative;
+  margin: 0;
+  font-size: 1.5em;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.pagination span,{
+  margin-right: 10px;
+}
+
+.pagination .current{
+  color: rgba(255, 255, 255, 0.2);
+}
+
+.pagination span a{
+  color: rgba(255, 255, 255, 0.7);
+          //#007bff;
+}
+
+tr.one_row > td {
+  padding-bottom: 1em;
+  font-size: 1.5em;
+}
+th{
+  text-align: center;
+}
+td {
+  font-size: 1.5em;
+}
+

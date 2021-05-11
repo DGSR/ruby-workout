@@ -22,6 +22,7 @@ $("#slide").change(function (){
     //show the amount
     var val=parseInt(this.value)
     var theme=$(".up-theme")[0];
+    displayValue.setAttribute("value",this.value)
     if(val===50){
         displayValue.innerHTML="<%= t(".no_idea") %>"
     }

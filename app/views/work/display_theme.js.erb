@@ -192,15 +192,15 @@ $('.img-left-side').click(function(event) {
 $('.button__results.save').unbind( "click" ).click(function(event) {
     console.log("clicked: button__results.save: ");
     event.stopImmediatePropagation(); // would stop the event from bubbling to parent elements,
-    var displayValue = document.getElementById('chosen_value').innerHTML;
-    console.log("displayValue = " + displayValue );
+    var displayValue = document.getElementById('chosen_value');
+    console.log("displayValue = " + displayValue.getAttribute("value") );
 
     $.ajax({
         type: "get",
         url: "api/save_value",
         data: { image_id: oneImageId,
             theme_id: selectedThemeId,
-            value: displayValue
+            value: displayValue.getAttribute("value")
         },
         dataType: 'json'
     }).done(function (data_return) {

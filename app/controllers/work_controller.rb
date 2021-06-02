@@ -59,9 +59,12 @@ class WorkController < ApplicationController
 
   def results_list
     @selected_theme_id = session[:selected_theme_id]
-    res_composite_diag = Image.where(theme_id: @selected_theme_id).order("ave_value DESC")
+    res_composite_diag = Image.where(theme_id: @selected_theme_id)
     composite_results_size = res_composite_diag.size
     @composite_results = res_composite_diag.take(composite_results_size)
     @composite_results_paged = pages_of(@composite_results, 6)
+    if !@selected_theme_id.blank? && res_composite_diag.size>0
+      @theme= Theme.find(@selected_theme_id).name
+    end
   end
 end

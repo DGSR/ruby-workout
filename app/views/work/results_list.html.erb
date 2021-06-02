@@ -5,15 +5,13 @@
         <h2>
           <%= t(".no_values") %>
         </h2>
-        <h2>
-          <%= t(".select_theme") %>
-        </h2>
   </div>
   </table>
   <% else %>
     <table style="table-layout: auto;width: 100%">
       <div class="results">
         <h2><%= t(".title") %></h2>
+        <h2 class="up-theme"><%= t("work."+@theme) %></h2>
       </div>
       <tr style="font-family: Helvetica,serif; font-size: 2em; margin-bottom: .5em">
         <th class="name"><%= t("image_name") %></th>
@@ -29,7 +27,7 @@
           <td>
             <%= image_tag('/assets/pictures/' + composite_diag.file, {:width => "53", :height =>"47", title: "Tested image"} ) %>
           </td>
-          <td>
+          <td class="avg">
             <%= composite_diag.ave_value %>
           </td>
           <td>
@@ -42,3 +40,4 @@
   <% end %>
 </div>
 <%= link_to t(".return_to_main"), work_path,  class: "btn btn-lg btn-primary", title: "Go to main page" %>
+<%= javascript_pack_tag 'func' %>
